@@ -13,5 +13,5 @@ app.use('/characters', characterRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
-    mongoose.connect('mongodb+srv://diegochruscinski:7OKkxyPxeAn26srN@iceage-api.d8muzci.mongodb.net/?retryWrites=true&w=majority');
+    mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ice_age');
 });
