@@ -1,45 +1,45 @@
 # Ice Age API
 
-API de estudo em Node.js para gerenciar filmes e personagens da franquia A Era do Gelo.
+Node.js practice API for managing movies and characters from the Ice Age franchise.
 
-## Funcionalidades
+## Features
 
-- Listagem e consulta por ID de filmes e personagens.
-- Criação, atualização e remoção dos registros.
-- Modelos com Mongoose e validação dos campos.
+- Lists movies and characters and retrieves them by ID.
+- Creates, updates and deletes records.
+- Uses Mongoose models and field validation.
 
-## Tecnologias
+## Technologies
 
-Node.js, Express, MongoDB e Mongoose.
+Node.js, Express, MongoDB and Mongoose.
 
-## Executar localmente
+## Run locally
 
-Disponibilize um MongoDB de desenvolvimento. Use Node.js com suporte à opção --env-file.
+Provide a development MongoDB instance. Use a Node.js version that supports --env-file.
 
 ```bash
 npm ci
 cp .env.example .env
-# Ajuste MONGODB_URI para seu banco de desenvolvimento.
+# Set MONGODB_URI to your development database.
 node --env-file=.env src/index.js
 ```
 
-O servidor usa a porta 3000. Sem MONGODB_URI, utiliza um banco local em 127.0.0.1:27017/ice_age.
+The server uses port 3000. Without MONGODB_URI, it connects to a local database at 127.0.0.1:27017/ice_age.
 
-## Recursos HTTP
+## HTTP resources
 
-| Recurso | Operações |
+| Resource | Operations |
 | --- | --- |
-| /films | GET e POST |
-| /films/:id | GET, PUT e DELETE |
-| /characters | GET e POST |
-| /characters/:id | GET, PUT e DELETE |
+| /films | GET and POST |
+| /films/:id | GET, PUT and DELETE |
+| /characters | GET and POST |
+| /characters/:id | GET, PUT and DELETE |
 
-## Organização
+## Structure
 
-- `src/index.js`: inicialização e conexão.
-- `src/models/`: schemas de filmes e personagens.
+- `src/index.js`: startup and connection.
+- `src/models/`: movie and character schemas.
 - `src/routes/`: endpoints.
 
-## Escopo
+## Scope
 
-Exercício de CRUD e persistência com MongoDB. O script npm test é um placeholder. A implementação não inclui autenticação e requer revisão dos fluxos de erro antes de exposição pública. O diretório node_modules está versionado; o .gitignore evita novos arquivos locais, mas não remove os já rastreados.
+CRUD and MongoDB persistence exercise. The npm test script is a placeholder. Authentication is not implemented, and error handling needs review before public exposure. node_modules is versioned; .gitignore prevents new local files from being added but does not remove files already tracked.
